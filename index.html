@@ -10,11 +10,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <canvas id="c"></canvas>
         <header>
             <h1>Academic Fight</h1>
         </header>
         <main>
+            <div id="game">
+                <img id="player" src="Amy.png" alt="Player">
+                <img id="weapon" alt="weapon">
+            </div>
             <!--score box-->
             <div id="hud">
                 <div id="sem">Semester 1</div>
@@ -40,14 +43,14 @@
             <section class="scr" id="select">
                 <p style="font-size:1.6rem">Choose a character</p>
                 <div class="row">
-                    <button class="pick" data-who="amy"><img src="Amy.png" alt="Amy picture" height="170"><br>Amy</button>
-                    <button class="pick" data-who="andy"><img src="Andy.png" alt="Andy picture" height="170"><br>Andy</button>
+                    <button class="pick" id="pickAmy"><img src="Amy.png" alt="Amy picture"><br>Amy</button>
+                    <button class="pick" id="pickAndy"><img src="Andy.png" alt="Andy picture"><br>Andy</button>
                 </div>
-                <p class="hint">Left and right arrows to move. Space shoots. <br> Reach 1200 points to graduate.</p>
+                <p class="hint">Using left and right arrows to move. Space shoots. <br> Reach 1200 points to graduate.</p>
             </section>
 
             <!--pop-up card-->
-            <section class="scr dim" id="card">
+            <section class="scr" id="card">
                 <div class="box">
                     <h2 id="cT"></h2>
                     <p id="cI"></p>
@@ -57,7 +60,7 @@
             </section>
 
             <!--Game Over-->
-            <section class="scr dim" id="over">
+            <section class="scr" id="over">
                 <div class="stamp">Fail to Graduate</div>
                 <div class="box">
                   <p id="oS"></p>
@@ -67,7 +70,7 @@
               </section>
             
             <!--Graduation-->
-            <section class="scr dim" id="win">
+            <section class="scr" id="win">
                 <div class="congrats">Congrats!</div>
                 <img id="wi" alt="Graduation">
                 <div class="box">
