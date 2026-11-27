@@ -5,17 +5,77 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Expressive Interfaces</title>
         <link rel="stylesheet" href="style.css"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
+        <canvas id="c"></canvas>
         <header>
-
+            <h1>Academic Fight</h1>
         </header>
         <main>
+            <!--score box-->
+            <div id="hud">
+                <div id="sem">Semester 1</div>
+                <div>Score: <b id="sc">0</b></div>
+                <div id="bar">
+                    <div id="fill"></div>
+                </div>
+            </div>
 
+            <!--semester unlock-->
+            <div id="banner"></div>
+
+            <!--operating control-->
+            <div id="pad">
+                <div>
+                    <button id="bl" aria-label="Move left">left</button>
+                    <button id="br" aria-label="Move right">right</button>
+                </div>
+                <button id="bf" aria-label="Shoot">shoot</button>
+            </div>
+
+            <!--Scene 1 (select character)-->
+            <section class="scr" id="select">
+                <p style="font-size:1.6rem">Choose a character</p>
+                <div class="row">
+                    <button class="pick" data-who="amy"><img src="Amy.png" alt="Amy picture" height="170"><br>Amy</button>
+                    <button class="pick" data-who="andy"><img src="Andy.png" alt="Andy picture" height="170"><br>Andy</button>
+                </div>
+                <p class="hint">Left and right arrows to move. Space shoots. <br> Reach 1200 points to graduate.</p>
+            </section>
+
+            <!--pop-up card-->
+            <section class="scr dim" id="card">
+                <div class="box">
+                    <h2 id="cT"></h2>
+                    <p id="cI"></p>
+                    <p id="cM"></p>
+                    <button class="btn" id="cB">Continue</button>
+                </div>
+            </section>
+
+            <!--Game Over-->
+            <section class="scr dim" id="over">
+                <div class="stamp">Fail to Graduate</div>
+                <div class="box">
+                  <p id="oS"></p>
+                  <button class="btn" id="oR">Try again</button>
+                  <button class="btn" id="oC">Change character</button>
+                </div>
+              </section>
+            
+            <!--Graduation-->
+            <section class="scr dim" id="win">
+                <div class="congrats">Congrats!</div>
+                <img id="wi" alt="Graduation">
+                <div class="box">
+                  <p id="wS"></p>
+                  <button class="btn" id="wR">Play again</button>
+                </div>
+            </section>
         </main>
-        <footer>
-
-        </footer>
         <script src="script.js"></script>
     </body>
 </html>
